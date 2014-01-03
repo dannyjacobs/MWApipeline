@@ -1,5 +1,8 @@
+\section{Pipeline Components}
   There are many possible paths to a power spectrum but all must in some way remove foregrounds and compute an estimate of the power spectrum. Along the way they must account for a affects like: ionosphere, very wide field, primary beam, polarized sources, and calibration. The MWA pipeline has two independent calibration and imaging modules which subtract the foregrounds and two power spectrum estimators. All are developed independently, sharing very little code, yet are interconnectable via common data formats to give four possible pipeline paths.
 
 The imaging and foreground subtraction portion of the pipeline can be handled by either of two custom packages.  The MWA Real Time System (RTS) was initially designed to make images in real time from the MWA 512.  On the de-scoped 128 element array, it has been implemented as an offline system, where it uses the extra time to fill in for the missing elements.  Fast Holographic Deconvolution (FHD) is a custom interferometric imaging package developed for wide-field instruments with a focus on accounting for the very wide antenna responses found on phased arrays.  Both systems were designed in parallel with the construction and commissioning of the MWA to provide a detailed introspection on every aspect of this experimental telescope. Each can calibrate a data set against a model, subtract a model, deconvolve images and use detailed models of the instrument throughout the process.  In addition, each has its own unique feature set developed as part of the experimental process.
 
 Power spectrum estimation can be done with direct visibility or imaging methods.
+
+The imaging blocks produce either calibrated residual visibilities or image cubes.
