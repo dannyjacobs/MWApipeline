@@ -6,4 +6,5 @@ Pipeline overview.tex
 RTS.tex
 FHD.tex
 Bryna PS.tex
+Cath PS.tex
 #2: FHD.tex
