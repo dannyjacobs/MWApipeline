@@ -10,4 +10,5 @@ Cath PS.tex
 Early Results.tex
 images.tex
 comparing power spectra.tex
+conclusion.tex
 #2: FHD.tex
