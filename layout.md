@@ -9,4 +9,5 @@ Bryna PS.tex
 Cath PS.tex
 Early Results.tex
 images.tex
+comparing power spectra.tex
 #2: FHD.tex
