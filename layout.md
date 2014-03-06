@@ -8,7 +8,7 @@ FHD.tex
 Bryna PS.tex
 Cath PS.tex
 Early Results.tex
-figures/B_RTS_pspec/B_RTS_pspec.png
+figures/B_RTS_pspec/aug23_3hr_first_bp_1061311664-1061323008_res_xx_bh_2dkpower.png
 images.tex
 comparing power spectra.tex
 conclusion.tex
