@@ -12,4 +12,5 @@ figures/B_RTS_pspec/aug23_3hr_first_bp_1061311664-1061323008_res_xx_bh_2dkpower.
 images.tex
 comparing power spectra.tex
 conclusion.tex
+figures/MWA_PS_compare/MWA_PS_compare.png
 #2: FHD.tex
