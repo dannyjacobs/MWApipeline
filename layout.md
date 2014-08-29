@@ -10,6 +10,7 @@ Cath PS.tex
 Early Results.tex
 images.tex
 comparing power spectra.tex
+figures/MWA_PS_compare1/MWA_PS_compare1.png
 conclusion.tex
 figures/MWA_PS_compare/MWA_PS_compare.png
 #2: FHD.tex
