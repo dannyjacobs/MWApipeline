@@ -4,6 +4,7 @@ Observing strategy.tex
 Pipeline overview.tex
 RTS.tex
 FHD.tex
+figures/image_compare/image_compare.png
 Bryna PS.tex
 Cath PS.tex
 Early Results.tex
