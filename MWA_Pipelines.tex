@@ -251,42 +251,9 @@ J.~S.~B.~Wyithe\UMelbourne$^,$\CAASTRO
 
 
 
-%\author{
-%Danny Jacobs\altaffilmark{1},
-%Ian Sullivan \altaffilmark{2}
-%Bryna Hazelton \altaffilmark{2},
-%Bart Pindor \altaffilmark{3},
-%Cath Trott \altaffilmark{4},
-%Josh Dillon \altaffilmark{5},
-%Abraham Neben \altaffilmark{5},
-%Adam Beardsley \altaffilmark{2},
-%EoR list,
-%Builders list
-%}
-%\altaffiltext{1}{School of Earth and Space Exploration, Arizona State U., Tempe, AZ}
-%\altaffiltext{2}{Physics Dept. University of Washington, Seattle, WA}
-%\altaffiltext{3}{Melbourne University, Melbourne, Aus}
-%\altaffiltext{4}{Curtin University, Perth, Aus}
-%\altaffiltext{5}{Massachusetts Institute of Technology, Boston, MA}
+
 \begin{abstract}
-We present an overview of the Murchison Widefield Array 21\,cm Epoch of Reionization analysis methods in which we compare the output of multiple pipelines as applied to a representative selection of data. The focus of this first round of analysis is on building the methodological foundation for detecting the weak statistical signature of cosmological HI at redshifts 6 to 10 in multi-year MWA observations. This paper provides a top level view over the methods and results of multiple, independent, data calibration and reduction pipelines.  To assess the accuracy of our methods we split the data analysis steps into the two steps widely considered to present the most challenges, bright foreground removal and power spectrum estimation in the presence of residual foregrounds.  Comparing images we see agreement on a significant amount of large scale, galactic, structure, though small differences related to calibration and weighting remain. Features common to all power spectrum results show the continued significance of wide-field effects, while differences in both imaging and power spectrum convey the importance of calibration algorithms and point towards future work. Using the calibrated and integrated image cubes we apply an inverse covariance technique to make a noise limited estimate of the power spectrum.   %Using the calibration refined through repeated  estimates of the power spectrum, a method itself calibrated against both models and independent reductions, in combination with down-weighting of residual covariance, we arrive at a noise limited power spectrum.
-
-
-%The Murchison Widefield Array (MWA) in Western Australia is currently
-%performing thousand hour integrations in the 2~m radio band with the
-%goal of detecting redshifted 21~cm emission from the Epoch of
-%Reionization (EoR) when the first stars are expected to reionize the
-%universe on cosmological scales. Our goal is to observe the power
-%spectrum of inter-galactic hydrogen as reionization proceeds and
-%constrain the timing and speed of this key step in the universe's
-%development. Because deep 21~cm power spectrum observations are very new
-%and require unprecedented levels of precision and foreground removal, we
-%have developed multiple analysis pipelines with redundant cross-checking
-%at each major processing stage to increase our confidence in the
-%reliability of the analysis. In this paper we describe the two parallel
-%analysis pipelines that will be used to analyze the MWA EoR data and
-%present initial power spectra and quality checks from the first nights
-%of EoR observing with the full MWA instrument.
+We present an overview of the Murchison Widefield Array 21\,cm Epoch of Reionization analysis methods in which we compare the output of multiple pipelines as applied to a representative selection of data. The focus of this first round of analysis is on building the methodological foundation for detecting the weak statistical signature of cosmological HI at redshifts 6 to 10 in multi-year MWA observations. This paper provides a top level view over the methods and results of multiple, independent, data calibration and reduction pipelines.  To assess the accuracy of our methods we split the data analysis steps into the two steps widely considered to present the most challenges, bright foreground removal and power spectrum estimation in the presence of residual foregrounds.  Comparing images we see agreement on a significant amount of large scale, galactic, structure, though small differences related to calibration and weighting remain. Features common to all power spectrum results show the continued significance of wide-field effects, while differences in both imaging and power spectrum convey the importance of calibration algorithms and point towards future work. Using the calibrated and integrated image cubes we apply an inverse covariance technique to make a noise limited estimate of the power spectrum.   
 
 \end{abstract}
 
@@ -328,16 +295,6 @@ One benefit from having multiple pipelines is the freedom to focus on different 
 In \ref{sec:observing} we summarize the observing strategy used to collect our data, \ref{sec:pipelines} explains our multiple pipelines and comparison strategy. In section \ref{sec:results} we show comparisons of images, 2D diagnostic power spectra and 1D power spectrum limits, and conclude in section \ref{sec:conclusion} with an overview of lessons learned from the comparison process and directions of future work .
 
 
-%\section{Pipeline overview}
-%\label{sec:overview}
-%Within the MWA reionization pipelines foreground removal is handled either by Full Holographic Deconvolution \citep[FHD]{Sullivan:2012p9457}\footnote{\url{github.com/miguelfmorales/FHD}} or the Real Time System \citep[RTS]{Ord:2010p8442}.  Here we use FHD to refer to a specific implementation of the algorithm constructed primarily for the reduction of MWA data, though it has been successfully applied to data from other telescopes.  The RTS is a hardware/software solution, originally designed to support operation of online imaging of the 512 element MWA, that has been repurposed and expanded into a general imaging package suitable for offline data reduction.
-%
-%
-% Estimation of the power spectrum that takes into account instrumental and sky uncertainty can also ameliorate some of the conflict between foreground and background.  Power spectrum estimation methods include \eppsilon\footnote{\eppsilon:Error Propagated Power Spectrum with InterLeaved Observed Noise;} \eppsiloncite, CHIPS\footnote{Cosmological HI Power Spectrum} \chipscite and \empirical cov \dilloncite.
-% 
-% \eppsilon  operates on residual images and is optimized for speed and error propagation. In simulation, the \eppsilon $+$ FHD combination has uncovered new mode-mixing features in the foreground power spectrum \citep{Morales:2012p8790}.  Trott et al have implemented CHIPS which uses an optimal estimator approach (e.g. \cite{Liu:2011p8763})  that operates directly on the time-ordered visibilities which have had an initial round of foreground subtraction.  In a second implementation of the optimal estimator approach \dilloncite takes image cubes produced by FHD and curated by \eppsilon, and uses an empirical calculation of foreground covariance to further down-weight foregrounds and place noise-limited estimates on the power spectrum.
-
-
 
 
 \section{Observing}
@@ -365,9 +322,6 @@ time & 3 hours on August 23, 2013 & a total of 6 pointings, lasting 30m each \ta
 \enddata
 \label{tab:observing}
 \end{deluxetable}
-
-
-%The MWA has observed 350 hours during the Fall 2013 EoR season.  The two main observing variables are choice of 30MHz band and pointing. Total time is limited. Observations are thermal noise limited. After about 1000 hours on a particular sky location and tuning they become cosmic variance limited.   
 
 
 
@@ -473,9 +427,7 @@ The next step is to Fourier transform in the frequency direction. Here we choose
 
 
 
-% The difference power spectrum provides our noise estimate, which we subtract from the sum power spectrum to estimate an unbiased noise power spectrum.  This is mathematically identical to the cross-power between even and odd if the even/odd variances are identical, which we have verified in this data set.  Finally the 3D power cubes are be averaged (weighted by the variance) in $k_x-k_y$ rings into the  two dimensional $k_{\|}-k_{\bot}$ space shown in the left column of Figure \ref{fig:pspec_compare}.
 
-%The covariance matrix (diagonal in $uvf$); terms given by the sum and difference variances) is propagated through this Fourier transform and covariances between non-identical modes are marginalized over. This results in a two-by-two covariance matrix for each Fourier mode containing the $cos^2$ and $sin^2$ terms on the diagonal and the $cos\times sin$ cross term in the off-diagonal elements. These covariance matrices (and the associated data) are then diagonalized for each Fourier mode (as in \cite{lomb1976} \& \cite{scargle1982}), producing two terms that are squared and combined to get the best power estimates. The sky signal power is best estimated by the square of the sum cube minus the square of the difference cube\footnote{This is mathematically identical to the even/odd cross power if the even and odd variances are identical} while the square of the difference cube provides a realization of the noise in the power spectrum. Finally the power cubes can be averaged (using a variance weighting) in $k_x-k_y$ rings to get to a two dimensional $k_{\|}-k_{\bot}$ space.
 
 \subsection{Power Spectrum \#2: CHIPS}
 \label{sec:CHIPS}
@@ -483,12 +435,11 @@ The CHIPS power spectrum estimation method computes the maximum likelihood estim
 
 The method involves four major steps: (1) Grid and weight time-ordered visibility channel onto a $uvw$-cube using the primary beam model, (2) compute the least squares spectral (LSS) transform along the frequency dimension to obtain the best estimate of the line-of-sight spatial sky modes (this technique is comparable to that used \eppsilon); (3) compute the maximum-likelihood estimate of the power spectrum, incorporating foregrounds and radiometric noise,  averaging $k_x$ and $k_y$ modes into annular modes on the sky, $k_\bot$; (4) compute the uncertainties and covariances between power estimates. The first step is the most computationally-intensive, requiring processing of all the measured data. The principle departure point for CHIPS from \eppsilon is in the much finer resolution of the $uv$ grid.  Using an instrument model, CHIPS calculates the covariance between $uv$ samples as a function of frequency.  Since the beam and $uv$ sampling function are both highly chromatic, extra precision in this inversion is thought to be highly beneficial. After a line of sight transform similar to that used by \eppsilon, this covariance information is inverted to find the fisher information, the maximum likelihood power spectrum, and covariances between measurements.  The resulting dataset provides an estimate of the power in each $k_\bot,k_\parallel$ mode, shown in the right column of Figure \ref{fig:pspec_compare}. 
 
-%covariance estimates the maximal error bar, Bryna likes marginalization.
-% doesn't really do anything to the data. just propagates error bar.  
+
 
 \subsection{Power Spectrum \#3: Implicit Covariance}
 \label{sec:empirical _cov}
-%The empirical  covariance method \cite{Liu:2011p8763} postulates the power spectrum residuals are still dominated by non-reionization signals and removes this excess by computing the pixel to pixel $uvf$ covariance (averaged in $uv$ rings, and down-weights by its inverse. The method builds on the optimal estimator framework used in the previous MWA 32T results \cite{Dillon:2014p9788} and in the recent PAPER 64 results \cite{2015arXiv150206016A}.  This final step takes as input FHD calibrated image cubes and a set list refined by jackknifing in \eppsilon, the resulting power spectrum is shown in Figure \ref{fig:1D_pspecs} and is discussed more completely in \dilloncite.  This 1D power spectrum includes the same data shown in Figures \ref{fig:image_compare} and\ref{fig:pspec_compare}. Though well above the predicted signal level the amplitudes 2$\sigma$ error bars are notably consistent with noise.
+
 
 The quadratic estimator method of \cite{Liu:2011p8763} treats foreground residuals in maps as a form of correlated noise and simultaneously downweights both noisy and foreground-dominated modes, keeping track of the extra variance they introduce into power spectrum estimates. This technique, accelerated by \cite{Dillon:2013p10497}, was used in the previous MWA 32T results \cite{Dillon:2014p9788}.  A very similar technique, working on visibilities rather than maps, was used for the recent PAPER 64 results  \cite{2015arXiv150206016A}.  \dilloncite build on these methods to mitigate errors introduced by imperfect mapmaking and instrument modeling through empirical covariance estimation, assuming all data covariance is sourced by foregrounds after shallow integrations
 
@@ -505,7 +456,6 @@ Foreground subtraction is highly dependent on the choice of sources included in 
 
 
 The residual, after subtraction of many hundreds of sources, tells a fairly consistent story of a significant amount of large scale power remaining, though the two imagers disagree somewhat on the exact arrangement.  One possibility follows from a consideration of the physical layout of the MWA and the  approach to calibration used in both imagers.  The MWA configuration is a compact core --with tiles separated by $<5$ wavelengths in some cases-- and a density that falls off radially; a configuration designed to match the expected steep rise of reionization power at large scales. Thus the image weights are highly condensed in the center of the $uv$ plane and make images dominated by large scale structure \cite{Beardsley:2013p9952}; reconstruction of the large scales is crucial to subtracting modeled foregrounds at small $k$, where reionization is brightest.   The primary question is whether any large-scale structure is ``real'', rather than some mis-calibration or other artifact that affects the large number of short baselines.  Calibration errors in a traditional interferometer having uniformly distributed baselines reveal themselves as side lobes around bright point sources; similar errors on the core-heavy MWA reveal themselves as artifactual large-scale power which is more difficult to distinguish from true emission.  In essence, by using only the longer baselines, and a model composed only of point sources, we have performed a calibration on a small amount of data on the periphery of the core and extrapolated the result to the majority of the data at the shortest spacings. It should be no surprise that small differences in calibration and weighting  heavily affect the accuracy of the images.  These differences are also apparent in the power spectrum.
-%XXX TODO color scale for the images. How bright is that stuff?
 
 
 
