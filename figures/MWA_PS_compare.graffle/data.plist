@@ -14,7 +14,7 @@
 	<key>BackgroundGraphic</key>
 	<dict>
 		<key>Bounds</key>
-		<string>{{0, 0}, {1152.0000534057617, 733}}</string>
+		<string>{{0, 0}, {1152, 733}}</string>
 		<key>Class</key>
 		<string>SolidGraphic</string>
 		<key>ID</key>
@@ -1044,6 +1044,94 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
+			<string>{{488.88794204510452, 428.39999042451382}, {314.6064416480807, 297.54052618132164}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Color</key>
+				<dict>
+					<key>w</key>
+					<string>0</string>
+				</dict>
+				<key>Font</key>
+				<string>Helvetica</string>
+				<key>Size</key>
+				<real>12</real>
+			</dict>
+			<key>ID</key>
+			<integer>72</integer>
+			<key>ImageID</key>
+			<integer>35</integer>
+			<key>Layer</key>
+			<integer>3</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{495.13794195197238, 121.21042897879158}, {301.16375453159782, 291.07693021714238}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>FontInfo</key>
+			<dict>
+				<key>Color</key>
+				<dict>
+					<key>w</key>
+					<string>0</string>
+				</dict>
+				<key>Font</key>
+				<string>Helvetica</string>
+				<key>Size</key>
+				<real>12</real>
+			</dict>
+			<key>ID</key>
+			<integer>71</integer>
+			<key>ImageID</key>
+			<integer>34</integer>
+			<key>Layer</key>
+			<integer>3</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
 			<string>{{210.49511993029864, 121.21042897879155}, {255.5336891202744, 279.00558777430302}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
@@ -1063,94 +1151,6 @@
 			<integer>70</integer>
 			<key>ImageID</key>
 			<integer>33</integer>
-			<key>Layer</key>
-			<integer>3</integer>
-			<key>Shape</key>
-			<string>Rectangle</string>
-			<key>Style</key>
-			<dict>
-				<key>fill</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-				<key>shadow</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-				<key>stroke</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-			</dict>
-		</dict>
-		<dict>
-			<key>Bounds</key>
-			<string>{{501.94266061263818, 113.42644372022934}, {255.5336891202744, 294.57355829142745}}</string>
-			<key>Class</key>
-			<string>ShapedGraphic</string>
-			<key>FontInfo</key>
-			<dict>
-				<key>Color</key>
-				<dict>
-					<key>w</key>
-					<string>0</string>
-				</dict>
-				<key>Font</key>
-				<string>Helvetica</string>
-				<key>Size</key>
-				<real>12</real>
-			</dict>
-			<key>ID</key>
-			<integer>68</integer>
-			<key>ImageID</key>
-			<integer>32</integer>
-			<key>Layer</key>
-			<integer>3</integer>
-			<key>Shape</key>
-			<string>Rectangle</string>
-			<key>Style</key>
-			<dict>
-				<key>fill</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-				<key>shadow</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-				<key>stroke</key>
-				<dict>
-					<key>Draws</key>
-					<string>NO</string>
-				</dict>
-			</dict>
-		</dict>
-		<dict>
-			<key>Bounds</key>
-			<string>{{506.94266053813254, 423.37926988696967}, {250.53368919478007, 286.9207250064029}}</string>
-			<key>Class</key>
-			<string>ShapedGraphic</string>
-			<key>FontInfo</key>
-			<dict>
-				<key>Color</key>
-				<dict>
-					<key>w</key>
-					<string>0</string>
-				</dict>
-				<key>Font</key>
-				<string>Helvetica</string>
-				<key>Size</key>
-				<real>12</real>
-			</dict>
-			<key>ID</key>
-			<integer>67</integer>
-			<key>ImageID</key>
-			<integer>31</integer>
 			<key>Layer</key>
 			<integer>3</integer>
 			<key>Shape</key>
@@ -1280,7 +1280,7 @@
 	<key>HPages</key>
 	<integer>2</integer>
 	<key>ImageCounter</key>
-	<integer>34</integer>
+	<integer>36</integer>
 	<key>ImageLinkBack</key>
 	<array>
 		<dict/>
@@ -1290,9 +1290,9 @@
 	</array>
 	<key>ImageList</key>
 	<array>
+		<string>image35.tiff</string>
+		<string>image34.tiff</string>
 		<string>image33.tiff</string>
-		<string>image32.tiff</string>
-		<string>image31.tiff</string>
 		<string>image28.tiff</string>
 	</array>
 	<key>KeepToScale</key>
@@ -1364,7 +1364,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-04-03 23:04:28 +0000</string>
+	<string>2015-04-22 00:04:02 +0000</string>
 	<key>Modifier</key>
 	<string>Danny Jacobs</string>
 	<key>NotesVisible</key>
@@ -1395,7 +1395,7 @@
 		<key>NSPaperSize</key>
 		<array>
 			<string>size</string>
-			<string>{612.00002670288086, 792}</string>
+			<string>{612, 792}</string>
 		</array>
 		<key>NSPrintReverseOrientation</key>
 		<array>
