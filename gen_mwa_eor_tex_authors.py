@@ -6,7 +6,6 @@ import sys
 
 #open the raw author list
 lines = open('mwa_eor_collab_raw_list.txt').readlines()
-#find a list of the institutions. look for \def\<affil>txt{
 affiliations = {}
 hasitprintedyet = {}
 names = []
