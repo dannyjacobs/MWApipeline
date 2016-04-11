@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActiveLayerIndex</key>
-	<integer>4</integer>
+	<integer>1</integer>
 	<key>ApplicationVersion</key>
 	<array>
 		<string>com.omnigroup.OmniGraffle6</string>
@@ -14,7 +14,7 @@
 	<key>BackgroundGraphic</key>
 	<dict>
 		<key>Bounds</key>
-		<string>{{0, 0}, {1152, 733}}</string>
+		<string>{{0, 0}, {1152.0000534057617, 733}}</string>
 		<key>Class</key>
 		<string>SolidGraphic</string>
 		<key>ID</key>
@@ -286,7 +286,7 @@
 				<real>12</real>
 			</dict>
 			<key>ID</key>
-			<integer>96</integer>
+			<integer>124</integer>
 			<key>ImageID</key>
 			<integer>56</integer>
 			<key>Layer</key>
@@ -1250,7 +1250,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{466.78101958148181, 99.890229213094187}, {213.84337664760028, 310.47953343242182}}</string>
+			<string>{{460.61616695009502, 97.011181390210282}, {216, 311.53846153846155}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1266,11 +1266,13 @@
 				<real>12</real>
 			</dict>
 			<key>ID</key>
-			<integer>117</integer>
+			<integer>121</integer>
 			<key>ImageID</key>
-			<integer>68</integer>
+			<integer>72</integer>
 			<key>Layer</key>
 			<integer>4</integer>
+			<key>Scaling</key>
+			<integer>1</integer>
 			<key>Shape</key>
 			<string>Rectangle</string>
 			<key>Style</key>
@@ -1294,7 +1296,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{462.77279030249474, 409.52754692140684}, {215.28000068664551, 309.07015899933759}}</string>
+			<string>{{460.61616695009502, 407.75840337997101}, {216, 310.99159663865544}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FontInfo</key>
@@ -1310,9 +1312,9 @@
 				<real>12</real>
 			</dict>
 			<key>ID</key>
-			<integer>116</integer>
+			<integer>120</integer>
 			<key>ImageID</key>
-			<integer>67</integer>
+			<integer>71</integer>
 			<key>Layer</key>
 			<integer>4</integer>
 			<key>Scaling</key>
@@ -1392,7 +1394,7 @@
 	<key>HPages</key>
 	<integer>2</integer>
 	<key>ImageCounter</key>
-	<integer>69</integer>
+	<integer>74</integer>
 	<key>ImageLinkBack</key>
 	<array>
 		<dict/>
@@ -1403,8 +1405,8 @@
 	</array>
 	<key>ImageList</key>
 	<array>
-		<string>image68.tiff</string>
-		<string>image67.tiff</string>
+		<string>image72.tiff</string>
+		<string>image71.tiff</string>
 		<string>image56.tiff</string>
 		<string>image55.tiff</string>
 		<string>image53.tiff</string>
@@ -1498,7 +1500,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-12-11 05:57:23 +0000</string>
+	<string>2016-01-15 05:23:21 +0000</string>
 	<key>Modifier</key>
 	<string>Danny Jacobs</string>
 	<key>NotesVisible</key>
@@ -1529,12 +1531,22 @@
 		<key>NSPaperSize</key>
 		<array>
 			<string>size</string>
-			<string>{612, 792}</string>
+			<string>{612.00002670288086, 792}</string>
 		</array>
 		<key>NSPrintReverseOrientation</key>
 		<array>
 			<string>coded</string>
 			<string>BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU051bWJlcgCEhAdOU1ZhbHVlAISECE5TT2JqZWN0AIWEASqEhAFxlwCG</string>
+		</array>
+		<key>NSPrinter</key>
+		<array>
+			<string>coded</string>
+			<string>BAtzdHJlYW10eXBlZIHoA4QBQISEhAlOU1ByaW50ZXIAhIQITlNPYmplY3QAhZKEhIQITlNTdHJpbmcBlIQBKwhTRVNFIEImV4aG</string>
+		</array>
+		<key>NSPrinterName</key>
+		<array>
+			<string>string</string>
+			<string>SESE B&amp;W</string>
 		</array>
 		<key>NSRightMargin</key>
 		<array>
@@ -1588,7 +1600,7 @@
 		<key>SidebarWidth</key>
 		<integer>230</integer>
 		<key>VisibleRegion</key>
-		<string>{{234.99999649822718, -28}, {916.24998634681128, 789.99998822808277}}</string>
+		<string>{{181.24999729916456, -28}, {916.24998634681128, 789.99998822808277}}</string>
 		<key>Zoom</key>
 		<real>0.80000001192092896</real>
 		<key>ZoomValues</key>
