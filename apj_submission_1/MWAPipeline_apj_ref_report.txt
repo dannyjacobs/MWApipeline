@@ -1,0 +1,151 @@
+Referee Report 
+
+In this paper, the authors present several analysis pipelines from the Murchison Widefield Array (MWA) Epoch of Reionization project. They emphasize the importance of having multiple pipelines for comparison purposes, demonstrating each pipeline with real data. This is a lesson that every experiment in the field ought to pay attention to, and I applaud the authors for bringing it up.
+
+The paper is generally solid and I feel that it should ultimately be published in ApJ. However, there are a number of points that I'd like the authors to address before the paper is accepted for publication. Many of these points target the clarity of presentation rather than the underlying methods, but I do have questions about the algorithms and results as well.
+
+One logistical point: the eppsilon pipeline differs from CHIPS and EmpCov in that Hazelton et al. is not on the arxiv yet, whereas Trott et al. and Dillon et al. (for CHIPS and EmpCov, respectively) have been published. For some of the questions regarding eppsilon that I list below, it may be sufficient for these questions to be deferred to Hazelton et al. if it is on the arxiv by the time this paper is resubmitted. (Incidentally, the "2015" labels should probably be replaced with "2016"?) Otherwise, it would be good to include more details in the present paper.
+
+Major points
+------------
+---Section 3, penultimate paragraph. A few points about the discussion of weight and variance cubes: i) I think the treatment that is described here is correct only if one assumes a constant weighting for all visibilities (e.g., if the first half of an observing season is noisier than the second half, one would want to downweight data from the first half. This isn't accounted for in the current description), ii) Can we show a little bit of the math for why these weights and variances are the correct ones? I had to do some algebra to convince myself that the method for constructing the variances box was correct, and I'm still unclear as to the weights are the correct ones, iii) The variance box is correct only if one does not deconvolve the maps. Perhaps this should be stated explicitly? (I know that FHD does point source deconvolution, but in both this comment and the one below, I mean "deconvolution" in the more general sense of undoing the synthesized beam of the interferometer
+completely).
+
+---Section 3.2. I think the FHD Imager deserves its own (short) subsection. Right now, the imaging part of FHD seems to just "magically" produce images in the last paragraph of Section 3.2. I would also re-emphasize that the imager does not deconvolve.
+
+---Section 3.2. "...its inverted operation for de-gridding simulations to form model visibilities" I don't really know what this means. Can the authors explain a little more?
+
+---Section 3.4, first paragraph. "The data (variance) cubes are then divided by the weight cubes (weight cubes squared) to arrive at the best estimates of the sky and variances". Can the authors clarify in what sense these estimates are "best"? I am not quite seeing it from the way the weights are defined. Would a quick derivation be possible?
+
+---Section 3.4, second paragraph. "The sky signal power is estimated by the square of the sum cube minus..., which is mathematically identical to the even/odd cross power if the even and odd variances are identical..." Is there not a difference in sensitivity? If I understand the description in Section 3.4 correctly, the eppsilon approach is to compute the power spectrum using all the data and then to subtract off the noise bias (which is given by the power spectrum of the difference cube). Now let A and B be the odd and even samples respectively. Eppsilon amounts to (A+B)^2 = A^2 + 2AB + B^2, minus the noise bias portions of A^2 and B^2. The other pipelines correspond to only including the 2AB term, and would thus miss out on the signal portions of A^2 and B^2. Thus, it seems incorrect to say that these approaches are mathematically identical? Am I misunderstanding something about the pipelines?
+
+---Section 3.4, second paragraph. The authors state that for P(k), they use a redshift range of 0.3, whereas for P(kperp, kpara) they use an effective redshift range of 0.86. What's the motivation here? Exactly where one draws the line and says there's too much redshift evolution is a bit of a fuzzy question, and I'm not sure 0.3 is so much better than 0.86. In principle, both types of power spectra require the assumption of translation invariance, and if 0.86 isn't good enough for one, it isn't good enough for the other. I suppose the point is that the authors are treating P(kperp, kpara) more as a diagnostic rather than a cosmological quantity, which perhaps makes it acceptable to use a "too large" redshift range. Maybe this should be stated more explicitly? More importantly, it was never stated in the text that CHIPS and EmpCov also use the smaller range for their P(k) constraints. This too is worth stating explicitly, for otherwise the comparisons in Figure 6 become
+meaningless.
+
+---Page 8, footnote 1. Given the importance of the wedge in Section 4, its introduction should be handled with a little more care, and definitely should not be relegated to a footnote. Additionally, in the main text the wedge is described using k wavenumbers, whereas in the footnote the authors use delay units. This may be confusing to readers who aren't already intimately familiar with the "delay picture" of the wedge.
+
+---Throughout the text, the authors switch between u,v,w,eta style units and k style units without warning. Perhaps this is unsurprising given that this is a collaborative paper amongst people working on different pipelines, but to make things clearer, I suggest either adopting one unified convention or providing explicit expressions for converting between conventions.
+
+---Figure 3. One thing that strikes me about FHD vs. RTS is that the RTS builds self-consistent SEDs for the sources, whereas FHD assumes a spectral index of 0.8 during subtraction. Since the images shown in Figure 3 are averaged over the entire spectral range, how much of the difference in the FHD-RTS column is simply due to differences in spectral modeling? In other words, might the averaging over the entire spectral range make the images seem more discrepant than they really are? If one looks at the FHD-RTS maps at individual frequencies, do some of the residual sources look dimmer?
+
+---Section 3.7 through the end of the paper: EmpCov is conspicuously absent. If possible, results from EmpCov should be presented in the same way as results from CHIPS and eppsilon, particularly since EmpCov delivers some of the best limits in Figure 6. Some specific places where EmpCov ought to be discussed more:
+---Section 3.7. Where do the authors see EmpCov in the broad landscape that they present?
+---Section 4.1, first sentence. A little strange to say "our two independent power spectrum estimators", when previous sections describe three independent power spectrum codes.
+---Figure 4. Since Figure 6 has a power spectrum from the FHD to EmpCov pipeline, presumably the data exists to add FHD-EmpCov to Figure 4. (I'm also not sure why there's a fundamental barrier to including RTS-EmpCov in the figure, which should be included unless there is a good reason it can't be).
+---Figure 5 could presumably at least have an FHD-EmpCov curve.
+
+---Section 4.1, third paragraph. The authors simply state that the horizontal and vertical stripes are due to passband edge effects and uneven uvf sampling, respectively. Presumably this was confirmed by some back-of-the-envelope matching of "lengthscales". Can such estimates be included? 
+
+---Section 4.1, third paragraph. What exactly do the authors mean by "accounting" for the covariance between uvf samples? Doesn't CHIPS already do this by building a full covariance model and taking the inverse covariance?
+
+---Figure 4. I am intrigued by the generally positive biases seen in the CHIPS results, and I am wondering if part of this can be alleviated by decorrelation methods. In particular, I wonder if the situation here might be similar to that seen in Figure 3 of Dillon et al. (2014). If so, it would be a computationally very quick way to improve the results.
+
+---Section 5, third bullet point. Given that Hazelton et al. is not on the arxiv yet, it may be helpful to at least provide a one sentence sketch of the idea behind the 50% power reduction problem (rather than just stating it).
+
+---Figure 6. I don't understand why "eppsilon power spectra of RTS outputs are excluded because error bars are not available". Why are they not available? CHIPS is able to generate error bars from the RTS output, so presumably the information is there. After all, the RTS does generate odd-even samples, so it should be possible to perform noise estimations using differenced data.
+
+Minor points
+------------
+---In the abstract, the authors write "The remaining contrast between results is due to variations in the hypothesis tested". By this, I assume the authors are referring to the discussion in Section 4.2. In the abstract, though, the sentence is so vague that it does not convey any information to the reader and makes things confusing. I certainly had no idea what it meant when I was reading the abstract. I would recommend leaving the sentence out.
+
+---Section 1, first paragraph. The mention of accretion disks seems oddly specific, especially since one could imagine other "secondary" sources of UV radiation beyond the "primary" source of stars.
+
+---Section 1, third paragraph. For readers not accustomed to the standard lore of 21cm cosmology, it may be helpful to provide some references for the magnitude of the foreground problem.
+
+---Section 1, fourth paragraph. When the authors cite a long list of papers pertaining to "methods for estimating the power spectrum, particularly those which minimize the effect of foregrounds...", it would be appropriate to include some citations from the LOFAR collaboration, which I'm sure has done a good amount of work in this area.
+
+---Section 1, fourth paragraph. Again for the benefit of readers not accustomed to 21cm cosmology, it may be helpful to spell out explicitly what the authors mean when they say "including the spectral dimension in the Fourier transform". (Crudely, I assume the authors mean "the problem isn't as easy as analyses of CMB data, since the spectral direction brings a whole host of complications")
+
+---Section 1, sixth paragraph. "Foreground avoidance" is mentioned here for the first time, without any explicit definition. This will likely not make sense to someone who isn't already familiar with the wedge, EoR window, etc.
+
+---Section 1, sixth paragraph. LOFAR, PAPER, and MWA are labeled as "next generation low frequency arrays" here. But aren't they current generation arrays? Indeed, in the second paragraph of the paper the authors say that these instruments are currently observing. On a related note, perhaps GMRT deserves a citation too?
+
+---Section 1, last paragraph. The terms "2D diagnostic power spectra" and "1D power spectrum" are not defined. They certainly aren't self-explantory, since someone from a galaxy survey background could interpret "1D" and "2D" as descriptors for the geometry of the survey, with the former referring to a pencil beam survey and the latter being a survey over a narrow redshift range.
+
+---Section 2.1. "l" in "cos l" isn't defined.
+
+---Section 2.2, first paragraph. It would be helpful to make explicit in the main text which coordinates correspond to which field (i.e., Field 0, 1, and 2).
+
+---Section 2.3 and footnote 1. RFI, FHD, and RTS are mentioned for the first time and not defined. (Maybe RFI is standard enough to not have to be defined, but FHD and RTS should definitely be defined the first time they are mentioned).
+
+---Section 3, second paragraph. "The baseline vector maps to the perpendicular wavemode k_perp". This is true only in the small field-of-view/flat sky limit.
+
+---Section 3, second paragraph. k_parallel is not defined.
+
+---Section 3, fifth paragraph. "...the sky model is mainly kept static". Two things: i) I would suggest picking a replacement for the word "static". I assume that what "static" means is that the data is not used to iteratively improve the model. However, on a first reading I got rather confused because I thought it meant that the authors weren't accounting for the gradual rotation of the sources through the field of view. ii) What, quantitatively, does "mainly" mean? Was some iteration done for, say, some of the sources or part of the time?
+
+---Section 3, penultimate paragraph. I think there is a text editor/copy-and-paste problem with the "1s". I see "?1?s".
+
+---Section 3, penultimate paragraph. For the even and odd samples, are they even and odd with respect to the snapshot length of 112 seconds?
+
+---Section 3, penultimate paragraph. "Together these encode the full covariance of the telescope's window function". I fail to see how a box of variances (which by construction does not encode the off-diagonal terms of a covariance matrix) can encode a covariance.
+
+---Section 3. Since it receives a Pacman box in Figure 2, perhaps there should be a brief discussion of how Cotter/AOFlagger works?
+
+---Section 3.3, third paragraph. "...shows up as the characteristic horizontal lines in a 2D power spectrum". Since the 2D power spectrum has not yet been defined at this point, "horizontal" doesn't really mean anything.
+
+---Section 3.4, first paragraph. "FT" and "DFT" are not defined. (Again, probably obvious to people used to thinking about power spectra, but for the sake of formality it's probably good to define).
+
+---Section 3.4, second paragraph. "This weighting scheme minimizes the covariance of the bright foreground modes between..." I would shy away from the use of the word "minimizes", since the cited works don't show that a "minimum" is achieved. At best, they show that fairly decent results are achieved with a Blackman-Harris window. Additionally, I don't think "covariance" is the right word either, since "covariance" implies some random variation (e.g., covariance of random errors). Even if the data consisted entirely of a bias term (i.e., if there were no stochasticity in the foregrounds whatsoever) and there were formally no covariance, it would be desirable to minimizes its *leakage*.
+
+---Last sentence of Section 3.4. "...weighting by variance". Presumably the authors mean "...weighting by inverse variance"?
+
+---Section 3.6, second paragraph. "...while a very similar technique...was used for the recent PAPER 64 results of Ali et al. (2015)". It's not clear to me why EmpCov is highlighted as being particularly similar to the PAPER pipeline, when in fact they are quite different. PAPER works in the delay domain and deals directly with baseline visibility cross-multiplications, while EmpCov uses images as input. I suppose there's the commonality of quadratic estimators, but then again, CHIPS shares that property too. One might argue that CHIPS is more similar to the PAPER pipeline, since it works exclusively in the Fourier domain (albeit not with a delay-style analysis).
+
+---Figure 4 caption. "Because all the power spectra are calculated by cross-multiplying independent data samples..." Isn't eppsilon an exception to this?
+
+---Figure 5. Perhaps it would be good to cut off the sharp drop-off in the FHD->CHIPS curve, which I assume is just due to the pipeline not trying to go beyond a particular k range. This would allow the vertical axis to be rescaled, enabling readers to see the curves in more detail.
+
+---Section 5, third bullet point. I appreciate the authors' transparency and honesty, but to cite differing Fourier conventions as something that was only discovered by comparing pipelines is perhaps a little too honest and transparent.
+
+---Figure 6. I assume "DILLSPEC" is the same as "EmpCov"?
+
+---Section 6, second paragraph. I agree with the author that "these are all good questions". But it seems rather strange to the reader for the authors to pose the questions and then to declare that their own questions are good ones.
+
+(Minor)^2 points and typos
+------------
+The following points are extremely minor. However, because some of these problems occur so persistently, these tiny things can integrate up and be irritating to a reader who's reading the paper cover-to-cover. Thank you in advance to the authors for bearing with what I realize are some extremely pedantic points.
+
+---Section 1, third paragraph. "well calibrated" -> "well-calibrated"
+
+---Section 1, fifth paragraph. I think "Pober et al., in press" is now published? Assuming it's ApJ 819, 8 that the authors are referring to.
+
+---There are a large number of places in the paper where a comma is used instead of a semicolon. This often (though not exclusively) occurs in this paper when a word like "however" is used as a conjunctive adverb to connect two independent clauses.
+For example:
+---Penultimate paragraph of Section 1: "Such forward modeling...portions of the pipeline, however, the model will always be..." ---> "pipeline; however, the model..."
+---Section 3, first paragraph: "...two very similar systems, however some ..." ---> "...two very similar systems; however, some..."
+---Section 4.1, final paragraph: "......with zero at $2\sigma$, however most..." ---> "...with zero at $2\sigma$; however, most..."
+Some other (non-"however") examples:
+---Section 3, third paragraph. "The local Galactic neighborhood has a ... short k_perp modes, extragalactic point sources..." ---> "...short k_perp modes; extragalactic..."
+---Section 3, fifth paragraph. "In both FHD and RTS the sky model is mainly kept static, rather than peeling a large number of sources the focus..." ---> "kept static; rather than peeling..."
+---Section 3.2, 1st paragraph. "...to form model visibilities, this careful accounting..." ---> "...to form model visibilities; this careful accounting..."
+-Figure 3 caption. "...containing similar sets of thousands of sources, most pixels..." ---> "...thousands of sources; in most pixels..."
+---Section 4. "...have residuals at about the 15% level, after foreground subtraction..." ---> "...level; after foreground..."
+
+---Section 3, fourth paragraph. "the export of the export of"
+
+---Section 3, fifth paragraph. Why is "contaminate" in quotes? Is it not a real contamination?
+
+---Section 3, fifth paragraph. I would suggest moving the citations to Pober and Beardsley to the middle of the sentence (after "low signal to noise"). I spent half a minute wondering how those papers had shown that "an accurate estimate of error is essential to estimating the significance of any putative detection" before realizing that the authors were citing the low signal-to-noise aspect of the first detections.
+
+---Section 3, penultimate paragraph. "full covariance of the telescope's window function". It would be more correct to say "covariance induced by the telescopes window function", since we're not talking about the covariance of the windows themselves (which would be a covariance of functions).
+
+---Section 3, third paragraph. "Initial complex gain solutions computed using the..." ---> "Initial complex gain solutions are computed using the..."
+
+---Section 3.4, first paragraph. "ie" ---> "i.e.,"
+
+---Section 4.1, first paragraph. I was a little confused by the phrase "diagonal elements of Figure 4". Took me a little while to realize the authors were treating the figure as a matrix.
+
+---Section 4.1, final paragraph. "a few a few" ---> "a few".
+
+---Section 4.1, final paragraph. "however most some are very..." I'm actually not sure if the authors want to say "most" or "some"!
+
+---Section 5, first paragraph. "imperfectly described in prose". True, but maybe not relevant?
+
+---Section 5, third bullet point. ". and in the process provides.."?
+
+---Section 5, third bullet point. "suitable for use calibration standards..." ---> "suitable for use as calibration standards..."
+
+---Section 5, fourth bullet point. "...effected longer baselines" ---> "...affected longer baselines".
+
+---Figure 6 caption. Vertical bars around "k" are not needed since k is already a scalar.
